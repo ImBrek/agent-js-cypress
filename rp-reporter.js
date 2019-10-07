@@ -72,7 +72,7 @@ class ReportPortalReporter extends reporters.Base {
 
     finishLaunch () {
         let launchId = this.list.pop();
-        const { promise } = this.client.finishLaunch(launchId);
+        const { promise } = this.client.finishLaunch(launchId,{end_time:new Date().valueOf(), status:'PASSED'});
         let done = false;
 
         promise.then(() => {
